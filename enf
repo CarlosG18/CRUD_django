@@ -1,0 +1,17 @@
+[33mcommit 88144547be2245d05219dd8fb6c356e0260d8259[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: CarlosG18 <c.gabriel.abc18@gmail.com>
+Date:   Sat Apr 8 23:47:30 2023 -0300
+
+    add models e view index
+
+[33mcommit 6dc5dc5c8ec118101580e5b7384661d07312c279[m
+Author: CarlosG18 <c.gabriel.abc18@gmail.com>
+Date:   Sat Apr 8 23:20:46 2023 -0300
+
+    add app crud
+
+[33mcommit f57599ca8d4ce6f4df66424651f267112cac6ffb[m
+Author: Carlos Gabriel Medeiros da Silva <90879208+CarlosG18@users.noreply.github.com>
+Date:   Sat Apr 8 20:55:59 2023 -0300
+
+    Initial commit
