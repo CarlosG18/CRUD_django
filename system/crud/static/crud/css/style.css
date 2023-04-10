@@ -1,0 +1,34 @@
+:root{
+    /*colors*/
+    --text-base: #afb6c2;
+    --text-title: #d4ccb6;
+    --background: #191816;
+    --form-background: #24221f;
+    --primary-color: #ffc632; 
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.header{
+    display: flex;
+    justify-content: start;
+}
+
+.car-image{
+    height: 100vh;
+}
+
+.car-image  img{
+    max-width: 100%;
+}
+
+form > fieldset{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}

@@ -4,3 +4,6 @@ from .models import User
 
 def index(request):
   return render(request, 'crud/Index.html')
+
+def saveuser(request):
+  return HttpResponse("ok")

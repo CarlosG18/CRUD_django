@@ -1,1 +1,55 @@
-<h1>Index</h1>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'crud/css/style.css' %}">
+    <link rel="shortcut icon" href="{%  static 'crud/images/favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <div>
+        <div class="header">
+            <div>
+                <img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in">
+            </div>
+        </div>
+        <div class="forms">
+            <form action="{% url 'crud:saveuser' %}" method="POST">
+                <fieldset>
+                    <div class="content">
+                        <div>
+                            <img src="" alt="">
+                            <legend><h1>Faça seu login</h1></legend>
+                        </div>
+                        <p>Entre com suas informações de cadastro</p>
+                        <label for="email_in">E-mail</label>
+                        <input type="email" id="email_in">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password">
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <a href="">esqueci minha senha</a>
+                        </div>
+                        <input type="submit" value="ENTRAR">
+                        <a href="">Não tem uma conta? Registre-se</a>    
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="car-image">
+        <img src="{%  static 'crud/images/side-image.jpg' %}" alt="car_image">
+    </div>
+</body>
+
+</html>
