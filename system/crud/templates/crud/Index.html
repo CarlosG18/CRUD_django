@@ -16,40 +16,40 @@
     <link rel="shortcut icon" href="{%  static 'crud/images/favicon.ico' %}" type="image/x-icon">
 </head>
 <body>
-    <div>
-        <div class="header">
-            <div>
-                <img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in">
+  
+  <div class="box">
+    <div class="content">
+      <div class="logo">
+        <img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in">
+      </div>
+      <div class="forms">
+        <form action="{% url 'crud:saveuser' %}" method="POST">
+            <div class="legend">
+              <img src="{% static 'crud/images/log-in.svg' %}" alt="log-in">
+              <h1>Faça seu login</h1>
             </div>
-        </div>
-        <div class="forms">
-            <form action="{% url 'crud:saveuser' %}" method="POST">
-                <fieldset>
-                    <div class="content">
-                        <div>
-                            <img src="" alt="">
-                            <legend><h1>Faça seu login</h1></legend>
-                        </div>
-                        <p>Entre com suas informações de cadastro</p>
-                        <label for="email_in">E-mail</label>
-                        <input type="email" id="email_in">
-                        <label for="password">Senha</label>
-                        <input type="password" id="password">
-                        <div>
-                            <input type="checkbox" name="" id="">
-                            <a href="">esqueci minha senha</a>
-                        </div>
-                        <input type="submit" value="ENTRAR">
-                        <a href="">Não tem uma conta? Registre-se</a>    
-                    </div>
-                </fieldset>
-            </form>
-        </div>
+            <p>Entre com suas informações de cadastro</p>
+            <div class="inputs">
+              <label for="email_in">E-mail</label>
+              <input type="email" id="email_in">
+              <label for="password">Senha</label>
+              <input type="password" id="password">
+            </div>
+            <div class="resgatar">
+              <input class="check" type="checkbox" name="" id="lembre">
+              <label for="lembre">Lembre-me</label>
+              <a href=""><b>esqueci minha senha</b></a>
+            </div>
+            <input class="button mb" type="submit" value="ENTRAR">
+            <a class="text-center" href="">Não tem uma conta? <b>Registre-se</b></a>    
+        </form>
+      </div>
     </div>
-
     <div class="car-image">
         <img src="{%  static 'crud/images/side-image.jpg' %}" alt="car_image">
     </div>
+  </div>
+  
 </body>
 
 </html>
