@@ -17,32 +17,25 @@ body{
     color: var(--text-base);
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-family: Roboto, Sans-Serif;
 }
 
 .box{
+  background-color: var(--form-background);
   display: flex;
-  background-color: #d1ac0660;
-  margin: 30px;
-  border-radius: 15px;
-  border: 2px solid red;
+  flex-direction: column;
+  max-width: 350px;
+  padding: 30px 50px;
+  border-radius: 10px;
 }
 
 .content{
- margin: 15px;
- border: 2px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.forms{
-  margin: 20px;
-  padding: 35px 70px;
-  border-radius: 10px;
 }
 
 .text-center{
@@ -51,11 +44,6 @@ body{
 
 .mb{
   margin-bottom: 15px;
-}
-
-a{
-  text-decoration: none;
-  color: var(--primary-color);
 }
 
 form{
@@ -87,12 +75,6 @@ form{
   border-radius: 5px;
 }
 
-.resgatar{
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-
 .inputs > input{
   color: white;
   width: 100%;
@@ -103,23 +85,8 @@ form{
   background-color: var(--form-background);
 }
 
-.check{
-  border: 2px solid #cdcdcd60;
-  background-color: var(--form-background);
-}
-
 .inputs > input:hover{
   border: 2px solid var(--primary-color);
-}
-
-.car-image{
-  max-width: 50%;
-}
-
-.car-image > img{
-  width: 100%;
-  height: 100%;
-  border-radius: 0 15px 15px 0;
 }
 
 .forms{

@@ -5,3 +5,6 @@ class User(models.Model):
   age = models.IntegerField()
   email = models.EmailField(max_length=75)
   password = models.CharField(max_length=8)
+  
+  def __str__(self):
+    return self.name

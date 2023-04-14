@@ -7,10 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>detalhes do form</h1>
-    <p> nome : {{ nome }}</p>
-    <p> idade : {{ idade }}</p>
-    <p> email : {{ email }}</p>
-    <p> nome : {{ senha }}</p>
+    <h1> Seja Bem Vindo {{ user.name }}</h1>
+    <h2> listando os usuários: </h2>
+    {% for usuario in users %}
+      <div>
+        <p> Nome do usuario: {{ usuario.name }} - idade: {{ usuario.age }} - email: {{ usuario.email }}</p>
+      </div>
+    {% endfor %}
 </body>
 </html>

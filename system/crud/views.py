@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import User
 
 def index(request):
@@ -24,4 +23,21 @@ def save_cadastro(request):
   senha = request.POST["password"]
   user = User(name=nome,age=idade,email=email,password=senha)
   user.save()
-  return render(request, 'crud/home.html')
+  aproved = 1
+  return render(request, 'crud/index.html',{
+    "aproved": aproved
+  })
+  
+def check_user(request):
+  email_check = request.POST["email"]
+  senha_check = request.POST["password"]
+  users = User.objects.all()
+  
+  for user in users:
+    if email_check == user.email and senha_check == user.password:
+      return render(request, 'crud/home.html', {"user":user, "users": users})
+  error = {
+    "email": email_check,
+    "error": "usuário não cadastrado"
+  }
+  return render(request, 'crud/index.html', error)

@@ -16,6 +16,12 @@
     <link rel="shortcut icon" href="{%  static 'crud/images/favicon.ico' %}" type="image/x-icon">
 </head>
 <body>
+  <div>{{ email }}</div>
+  {% if aproved == 1 %}
+    <div>
+      <p> Usuário cadastrado com sucesso. agora você pode entrar na sua conta!</p>
+    </div>
+  {% endif %}
   
   <div class="box">
     <div class="content">
@@ -23,7 +29,7 @@
         <img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in">
       </div>
       <div class="forms">
-        <form action="{% url 'crud:saveuser' %}" method="POST">
+        <form action="{% url 'crud:check_user' %}" method="POST">
           {% csrf_token %}
             <div class="legend">
               <img src="{% static 'crud/images/log-in.svg' %}" alt="log-in">
