@@ -19,20 +19,20 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-family: Roboto, Sans-Serif;
 }
 
 .box{
+  width: 800px;
   display: flex;
   background-color: #d1ac0660;
   margin: 30px;
   border-radius: 15px;
-  border: 2px solid red;
 }
 
 .content{
- margin: 15px;
- border: 2px solid red;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +41,7 @@ body{
 
 .forms{
   margin: 20px;
-  padding: 35px 70px;
+  padding: 35px;
   border-radius: 10px;
 }
 
@@ -124,4 +124,21 @@ form{
 
 .forms{
   background-color: var(--form-background);
+}
+
+@media (max-width: 800px){
+  body{
+    align-items: center;
+  }
+  
+  .box{
+    flex-direction: column-reverse;
+    max-width: 500px;
+    margin: 0;
+    background-color: var(--form-background);
+  }
+
+  .car-image{
+    display: none;
+  }
 }

@@ -1,18 +1,43 @@
 <!DOCTYPE html>
+{% load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'crud/css/home.css' %}">
+    <link rel="shortcut icon" href="{%  static 'crud/images/favicon.ico' %}" type="image/x-icon">
+    <title>Home</title>
 </head>
 <body>
-    <h1> Seja Bem Vindo {{ user.name }}</h1>
-    <h2> listando os usuários: </h2>
-    {% for usuario in users %}
-      <div>
-        <p> Nome do usuario: {{ usuario.name }} - idade: {{ usuario.age }} - email: {{ usuario.email }}</p>
-      </div>
-    {% endfor %}
+  <header>
+    <div class="logo">
+      <a href="{% url 'crud:home' %}"><img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in"></a>
+    </div>
+    <div class="links-header">
+      <ul>
+        <li><a href="#">home</a></li>
+        <li><a href="#">listar users</a></li>
+        <li><a href="#">deletar</a></li>
+        <li><a href="#">sair</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div>
+      <h1> Bem Vindo "user" </h1>
+      <p> aplicação de CRUD - deletar, modificar e listar usuarios em um banco de dados</p>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="logo">
+      <a href="{% url 'crud:home' %}"><img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in"></a>
+    </div>
+    <div class="links-social">
+      
+    </div>
+  </footer>
 </body>
 </html>
