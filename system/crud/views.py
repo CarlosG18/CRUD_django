@@ -74,11 +74,8 @@ class DeleteView(generic.ListView):
   def get_queryset(self):
     return User.objects.all()
 
-class EditarView(generic.ListView):
-  template_name = "crud/editar.html"
-  context_object_name = "users"
-  def get_queryset(self):
-    return User.objects.all()
+def editar(request):
+  return render(request, "crud/editar.html")
     
 def delete_user(request, id):
   User.objects.filter(id=id).delete()

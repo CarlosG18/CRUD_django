@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'crud/css/list_user.css' %}">
+    <link rel="stylesheet" href="{% static 'crud/css/editar.css' %}">
     <link rel="shortcut icon" href="{%  static 'crud/images/favicon.ico' %}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,28 +32,38 @@
   </header>
 
   <main>
-    <div class="flex-center box">
-      <h1 class="title"> editar usuários </h1>
-      <table border="1">
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-      {% for user in users %}
-          <tr>
-            {% if user.username != request.user.username %}
-            <td>{{ user.username }}</td>
-            <td>{{ user.email }}</td>
-            <td><a href="#">x</a></td>
-            {% endif %}
-          </tr>
-      {% endfor %}
-        </tbody>
-      </table>
+    <div class="box flex-column">
+      <h1 class="title">Alterando dados</h1>
+      
+      <div class="data flex my-30">
+        <div class="data-atual mx-10 box border">
+          <h2 class="txt-center">Dados atuais</h2>
+          <div class="h-100 flex-column">
+            <p>Username: {{ request.user.username }}</p>
+            <p>Email: {{ request.user.email }}</p>
+          </div>
+        </div>
+        <div class="mx-10 box border">
+          <h2 class="txt-center">alterar dados</h2>
+          <div class="h-100 flex-column">
+            <form id="form_edit" class="flex-column">
+              <label for="username_in">Username</label>
+              <input required="true" autocomplete="false" type="text" id="username_in" name="nome">
+              <label for="email_in">E-mail</label>
+              <input required="true" type="email" id="email_in" name="email">
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="confirm">
+        <p class="my-20"><b>para confirmar a edição dos dados coloque sua senha</b></p>
+        <div class="flex-column">
+          <input class="mb-20" form="form_edit" required="true" type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+          <input form="form_edit" class="button" type="submit" value="EDITAR">
+        </div>
+      </div>
+      
     </div>
   </main>
   
