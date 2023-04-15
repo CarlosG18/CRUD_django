@@ -30,9 +30,10 @@
     </div>
   </header>
 
-  <main>
-    <div class="flex-center box">
+  <main class="box">
+    <div>
       <h1 class="title"> Deletar usuários </h1>
+      {% if cont > 1 %}
       <table border="1">
         <thead>
           <tr>
@@ -42,17 +43,20 @@
           </tr>
         </thead>
         <tbody>
-      {% for user in users %}
+        {% for user in users %}
           <tr>
             {% if user.username != request.user.username %}
             <td>{{ user.username }}</td>
             <td>{{ user.email }}</td>
-            <td><a href="#">x</a></td>
+            <td><a href="{% url 'crud:delete_user' user.id %}">x</a></td>
             {% endif %}
           </tr>
-      {% endfor %}
+        {% endfor %}
         </tbody>
       </table>
+      {% else %}
+        <p> Não possui usuários!</p>
+      {% endif %}
     </div>
   </main>
   

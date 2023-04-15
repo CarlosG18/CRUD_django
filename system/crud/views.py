@@ -79,4 +79,9 @@ class EditarView(generic.ListView):
   context_object_name = "users"
   def get_queryset(self):
     return User.objects.all()
-  
+    
+def delete_user(request, id):
+  User.objects.filter(id=id).delete()
+  users = User.objects.all()
+  contagem = users.count()
+  return render(request, "crud/delete.html", {"users": users, "cont": contagem})

@@ -30,7 +30,7 @@
     </div>
   </header>
 
-  <main>
+  <main class="box">
     <div>
       <h1> Bem Vindo {{ request.user }} </h1>
       <p> aplicação de CRUD - deletar, modificar e listar usuarios em um banco de dados</p>
@@ -38,9 +38,6 @@
   </main>
   
   <footer>
-    <div class="logo">
-      <a href="{% url 'crud:home' %}"><img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in"></a>
-    </div>
     <div class="links-social">
       
     </div>
