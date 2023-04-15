@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'crud/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'crud/css/list_user.css' %}">
     <link rel="shortcut icon" href="{%  static 'crud/images/favicon.ico' %}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <title>Home</title>
+    <title>Listar users</title>
 </head>
 <body>
   <header>
@@ -31,16 +31,32 @@
   </header>
 
   <main>
-    <div>
-      <h1> Bem Vindo {{ request.user }} </h1>
-      <p> aplicação de CRUD - deletar, modificar e listar usuarios em um banco de dados</p>
+    <div class="flex-center box">
+      <h1 class="title"> Deletar usuários </h1>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+      {% for user in users %}
+          <tr>
+            {% if user.username != request.user.username %}
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td><a href="#">x</a></td>
+            {% endif %}
+          </tr>
+      {% endfor %}
+        </tbody>
+      </table>
     </div>
   </main>
   
   <footer>
-    <div class="logo">
-      <a href="{% url 'crud:home' %}"><img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in"></a>
-    </div>
     <div class="links-social">
       
     </div>

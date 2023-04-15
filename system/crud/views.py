@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-
+from django.views import generic
 
 def index(request):
   return render(request, 'crud/Index.html')
@@ -60,3 +60,23 @@ def check_user(request):
 @login_required(login_url='/crud/')
 def home(request):
   return render(request, 'crud/home.html')
+  
+class List_userView(generic.ListView):
+  template_name = "crud/list_user.html"
+  context_object_name = "list"
+  def get_queryset(self):
+    return User.objects.all()
+    
+class DeleteView(generic.ListView):
+  template_name = "crud/delete.html"
+  context_object_name = "users"
+  
+  def get_queryset(self):
+    return User.objects.all()
+
+class EditarView(generic.ListView):
+  template_name = "crud/editar.html"
+  context_object_name = "users"
+  def get_queryset(self):
+    return User.objects.all()
+  
