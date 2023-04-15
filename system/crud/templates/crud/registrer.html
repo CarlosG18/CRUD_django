@@ -31,17 +31,19 @@
             </div>
             <p>Entre com suas informações de cadastro</p>
             <div class="inputs">
-              <label for="name_in">Nome</label>
-              <input type="text" id="name_in" name="nome">
-
-              <label for="idade_in">Idade</label>
-              <input type="number" id="idade_in" name="idade">
-
+              <label for="username_in">Username</label>
+              <input required="true" autocomplete="false" type="text" id="username_in" name="nome">
+              {% if error_username %}
+                <p class="box-alert red">{{ error_username }}</p>
+              {% endif %}
               <label for="email_in">E-mail</label>
-              <input type="email" id="email_in" name="email">
+              <input required="true" type="email" id="email_in" name="email">
+              {% if error_email %}
+                <p class="box-alert red">{{ error_email }}</p>
+              {% endif %}
 
               <label for="password">Senha</label>
-              <input type="password" id="password" name="password">
+              <input required="true" type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
             </div>
             <input class="button mb" type="submit" value="CADASTRAR">
         </form>

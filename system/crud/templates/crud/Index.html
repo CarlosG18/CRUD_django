@@ -16,14 +16,7 @@
     <link rel="shortcut icon" href="{%  static 'crud/images/favicon.ico' %}" type="image/x-icon">
 </head>
 <body>
-<!--   
-  <div>{{ email }}</div>
-  {% if aproved == 1 %}
-    <div>
-      <p> Usuário cadastrado com sucesso. agora você pode entrar na sua conta!</p>
-    </div>
-  {% endif %}
-   -->
+
   <div class="box">
     <div class="content">
       <div class="logo">
@@ -38,10 +31,16 @@
             </div>
             <p>Entre com suas informações de cadastro</p>
             <div class="inputs">
-              <label for="email_in">E-mail</label>
-              <input type="email" id="email_in" name="email">
+              <label for="username_in">Username</label>
+              <input type="text" id="username_in" name="nome">
               <label for="password">Senha</label>
               <input type="password" id="password" name="password">
+              {% if error %}
+                <p class="box-alert red">{{ error }}</p>
+              {% endif %}
+              {% if aproved %}
+                <p class="box-alert green">{{ aproved }}</p>
+              {% endif %}
             </div>
             <div class="resgatar">
               <input class="check" type="checkbox" name="" id="lembre">
@@ -49,7 +48,7 @@
               <a href=""><b>esqueci minha senha</b></a>
             </div>
             <input class="button mb" type="submit" value="ENTRAR">
-            <a class="text-center" href="{% url 'crud:registrer' %}">Não tem uma conta? <b>Registre-se</b></a>    
+            <a class="text-center" href="{% url 'crud:registrer' %}">Não tem uma conta? <b>Registre-se</b></a>
         </form>
       </div>
     </div>

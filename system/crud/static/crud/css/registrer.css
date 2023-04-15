@@ -92,3 +92,16 @@ form{
 .forms{
   background-color: var(--form-background);
 }
+
+.box-alert{
+  padding: 7px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.red{
+  background-color: #ff38382a;
+  border: 2px solid red;
+  color: red;
+}

@@ -126,6 +126,25 @@ form{
   background-color: var(--form-background);
 }
 
+.box-alert{
+  padding: 7px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.red{
+  background-color: #ff38382a;
+  border: 2px solid red;
+  color: red;
+}
+
+.green{
+  background-color: #38ff5924;
+  border: 2px solid green;
+  color: green;
+}
+
 @media (max-width: 800px){
   body{
     align-items: center;
