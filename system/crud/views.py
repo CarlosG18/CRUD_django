@@ -1,9 +1,9 @@
-
 from django.shortcuts import render
 # from .models import User
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 
@@ -49,6 +49,7 @@ def check_user(request):
     user = authenticate(username=username, password=senha_check)
 
     if user is not None:
+      login(request, user)
       return HttpResponseRedirect(reverse('crud:home'))
     else:
       error = {
@@ -56,5 +57,6 @@ def check_user(request):
       }
       return render(request, 'crud/Index.html', error)
 
+@login_required(login_url='/crud/')
 def home(request):
   return render(request, 'crud/home.html')
