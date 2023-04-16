@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.views import generic
+from django.contrib.auth.hashers import check_password
 
 def index(request):
   return render(request, 'crud/Index.html')
@@ -82,3 +83,17 @@ def delete_user(request, id):
   users = User.objects.all()
   contagem = users.count()
   return render(request, "crud/delete.html", {"users": users, "cont": contagem})
+
+def editar_user(request, id):
+  new_username = request.POST["new_name"]
+  new_email = request.POST["new_email"]
+  password_check = request.POST["password"]
+  
+  user = User.objects.get(id=id)
+  
+  if check_password(password_check,user.password):
+    user.username = new_username
+    user.email = new_email
+    user.save()
+  
+  return HttpResponseRedirect(reverse('crud:editar'))

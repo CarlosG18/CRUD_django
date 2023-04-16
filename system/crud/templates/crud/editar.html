@@ -46,11 +46,12 @@
         <div class="mx-10 box border">
           <h2 class="txt-center">alterar dados</h2>
           <div class="h-100 flex-column">
-            <form id="form_edit" class="flex-column">
+            <form action="{% url 'crud:editar_user' request.user.id %}" id="form_edit" class="flex-column" method="POST">
+              {% csrf_token %}
               <label for="username_in">Username</label>
-              <input required="true" autocomplete="false" type="text" id="username_in" name="nome">
+              <input required="true" autocomplete="false" type="text" id="username_in" name="new_name">
               <label for="email_in">E-mail</label>
-              <input required="true" type="email" id="email_in" name="email">
+              <input required="true" type="email" id="email_in" name="new_email">
             </form>
           </div>
         </div>
@@ -59,7 +60,7 @@
       <div class="confirm">
         <p class="my-20"><b>para confirmar a edição dos dados coloque sua senha</b></p>
         <div class="flex-column">
-          <input class="mb-20" form="form_edit" required="true" type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+          <input class="mb-20" form="form_edit" required="true" type="password" id="password" name="password">
           <input form="form_edit" class="button" type="submit" value="EDITAR">
         </div>
       </div>
