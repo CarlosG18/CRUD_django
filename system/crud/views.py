@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.views import generic
+from django.contrib.auth.hashers import check_password
 
 def index(request):
   return render(request, 'crud/Index.html')
@@ -74,14 +75,25 @@ class DeleteView(generic.ListView):
   def get_queryset(self):
     return User.objects.all()
 
-class EditarView(generic.ListView):
-  template_name = "crud/editar.html"
-  context_object_name = "users"
-  def get_queryset(self):
-    return User.objects.all()
+def editar(request):
+  return render(request, "crud/editar.html")
     
 def delete_user(request, id):
   User.objects.filter(id=id).delete()
   users = User.objects.all()
   contagem = users.count()
   return render(request, "crud/delete.html", {"users": users, "cont": contagem})
+
+def editar_user(request, id):
+  new_username = request.POST["new_name"]
+  new_email = request.POST["new_email"]
+  password_check = request.POST["password"]
+  
+  user = User.objects.get(id=id)
+  
+  if check_password(password_check,user.password):
+    user.username = new_username
+    user.email = new_email
+    user.save()
+  
+  return HttpResponseRedirect(reverse('crud:editar'))
