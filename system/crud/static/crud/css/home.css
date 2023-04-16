@@ -15,11 +15,10 @@
   body{
       background-color: var(--background);
       color: var(--text-base);
+      font-size: 10pt;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      /* justify-content: center; */
-      /* align-items: center; */
       font-family: Roboto, Sans-Serif;
   }
 
@@ -56,6 +55,7 @@
     padding: 30px;
     border-radius: 15px;
     box-shadow: 10px 10px 5px black;
+    margin: 20px 0;
   }
 
   main{
@@ -63,12 +63,53 @@
     flex-direction: column;
     margin: 20px;
   }
-
-  footer{
-    
-  }
   
   .user{
     color: var(--primary-color);
     margin: 0 25px;
   }
+  
+  article{
+    text-align: justify;
+  }
+  
+  article > p{
+    margin: 15px 0;
+  }
+  
+  .title{
+    color: var(--primary-color);
+  }
+  
+  .flex-column{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mx-10{
+    margin: 0 40px;
+  }
+  
+.space{
+  display: flex;
+  justify-content: center;
+}
+  
+.my-20{
+    margin: 20px 0;
+  }
+  
+.mb-30{
+  margin-bottom: 30px;
+}
+  
+  .text-center{
+    text-align: center;
+  }
+  
+@media (max-width: 800px){
+  body{
+    font-size: 12px;
+  }
+}
