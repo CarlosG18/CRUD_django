@@ -101,7 +101,8 @@ def editar_user(request, id):
   
   return HttpResponseRedirect(reverse('crud:editar'))
 
-@login_required
-def logout(request):
-  logout(request)
-  return HttpResponseRedirect(reverse('crud:index'))
+
+# @login_required
+# def logout(request):
+#   logout(request)
+#   return HttpResponseRedirect(reverse('crud:index'))
