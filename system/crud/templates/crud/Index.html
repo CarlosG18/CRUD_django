@@ -30,9 +30,9 @@
             <p>Entre com suas informações de cadastro</p>
             <div class="inputs">
               <label for="username_in">Username</label>
-              <input type="text" id="username_in" name="nome">
+              <input required="true" type="text" id="username_in" name="nome">
               <label for="password">Senha</label>
-              <input type="password" id="password" name="password">
+              <input required="true" type="password" id="password" name="password">
               {% if error %}
                 <p class="box-alert red">{{ error }}</p>
               {% endif %}
