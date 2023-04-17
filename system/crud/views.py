@@ -2,7 +2,7 @@ from django.shortcuts import render
 # from .models import User
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.views import generic
@@ -42,21 +42,24 @@ def save_cadastro(request):
       })
   
 def check_user(request):
-  if request.method == "GET":
-    return render(request, 'crud/index.html', {"error": None})
-  else:
+  if request.method == "POST":
     username = request.POST["nome"]
     senha_check = request.POST["password"]
     user = authenticate(username=username, password=senha_check)
 
     if user is not None:
-      login(request, user)
-      return HttpResponseRedirect(reverse('crud:home'))
+      if user.is_active:
+        login(request, user)
+        return HttpResponseRedirect(reverse('crud:home'))
+      else:
+        error = {
+          "error":"usuário inativo"
+        }
     else:
       error = {
-        "error": "usuário ou senha invalidos"
+        "error":"usuário ou senha incorretos!"
       }
-      return render(request, 'crud/Index.html', error)
+  return render(request, 'crud/Index.html', error)
 
 @login_required(login_url='/crud/')
 def home(request):
@@ -97,3 +100,8 @@ def editar_user(request, id):
     user.save()
   
   return HttpResponseRedirect(reverse('crud:editar'))
+
+@login_required
+def logout(request):
+  logout(request)
+  return HttpResponseRedirect(reverse('crud:index'))
