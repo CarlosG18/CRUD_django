@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 {% load static %}
 <html lang="en">
 <head>
@@ -14,6 +14,7 @@
     <title>Home</title>
 </head>
 <body>
+    <!-- {% block header %} -->
   <header>
     <div class="logo">
       <a href="{% url 'crud:home' %}"><img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in"></a>
@@ -28,21 +29,10 @@
       </ul>
     </div>
   </header>
+  <!-- {% endblock %} -->
 
-  <main>
-    <div class="box">
-      <h1 class="title"> Bem Vindo {{ request.user }} </h1>
-      <p> aplicação CRUD </p>
-    </div>
-    
-    <article class="box">
-      <h1 class="title"> Mas afinal, o que é um CRUD?</h1>
-      <p>CRUD é um acrônimo para Create (criar), Read (ler), Update (atualizar) e Delete (excluir). É um conjunto de operações básicas que podem ser realizadas em um sistema de gerenciamento de banco de dados (DBMS), e que permitem manipular dados armazenados em uma base de dados.</p>
-      <p>O Create é usado para criar novos registros em um banco de dados, ou seja, para adicionar novas informações a uma tabela. O Read é usado para ler os registros existentes em uma tabela, permitindo que os dados sejam recuperados para fins de visualização ou processamento. O Update é usado para modificar os registros existentes em uma tabela, alterando os valores dos campos específicos. E o Delete é usado para remover os registros existentes em uma tabela, excluindo as informações armazenadas na base de dados.</p>
-      <p>Em resumo, o CRUD é uma das bases fundamentais de qualquer sistema de gerenciamento de banco de dados, e sua utilização é essencial para permitir que os usuários possam gerenciar e manipular dados de maneira eficiente e segura. Por meio dessas quatro operações básicas, é possível realizar uma ampla variedade de tarefas e manipulações de dados em um banco de dados, tornando o CRUD uma ferramenta essencial para qualquer aplicação que envolva o armazenamento e manipulação de informações.</p>
-    </article>
-  </main>
-  
+
+  <!-- {% block footer %} -->
   <footer class="box flex-column text-center">
     <div class="mb-30">
       <p>criado por <b>Carlos Gabriel</b></p>
@@ -53,8 +43,6 @@
       <a class="mx-10" href="#"><img src="{%  static 'crud/images/instagram.png' %}" alt="logo_instagram"></a>
     </div>
   </footer>
+  <!-- {% endblock %} -->
 </body>
-</html> -->
-
-{% extends "crud/base.html" %}
-
+</html>

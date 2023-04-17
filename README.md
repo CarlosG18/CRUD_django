@@ -15,3 +15,6 @@ Desenvolvendo um crud simples com django-Python + Desafio: Login Form CSS (rocke
 ```
 
 - **filtros(filters)**: os filtros transformam os valores da variaveis
+
+- herança de modelos:
+você pode criar um modelo base e exporta em outros arquivos
