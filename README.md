@@ -18,3 +18,16 @@ Desenvolvendo um crud simples com django-Python + Desafio: Login Form CSS (rocke
 
 - herança de modelos:
 você pode criar um modelo base e exporta em outros arquivos
+
+- para exportar uma base html basta usar a seguinte expressão no topo do arquivo html:
+
+```python
+{% extends "./base.html" %}
+```
+
+- você pode criar blocos para otimizar sua pagina html:
+
+```python
+{% block <nome do bloco> %}{% endblock %}
+```
+

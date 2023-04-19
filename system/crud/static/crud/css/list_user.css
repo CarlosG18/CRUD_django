@@ -1,82 +1,18 @@
-*{
-  margin: 0;
-  padding: 0;
+table{
+  margin-top: 30px;
+  text-align: center;
 }
 
-:root{
-    /*colors*/
-    --text-base: #afb6c2;
-    --text-title: #d4ccb6;
-    --background: #191816;
-    --form-background: #24221f;
-    --primary-color: #ffc632; 
+.title{
+  font-family: Poppins, Sans-Serif;
+  color: var(--primary-color);
 }
 
-body{
-      background-color: var(--background);
-      color: var(--text-base);
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      font-family: Roboto, Sans-Serif;
-  }
+td, th{
+  padding: 10px;
+}
 
-  header{
-      margin-top: 10px;
-      display: flex;
-      width: 100vw;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(168, 168, 168, 0.486);
-  }
-
-  .links-header > ul{
-      display: flex;
-  }
-
-  .links-header > ul > li{
-      margin: 0 10px;
-      list-style: none;
-  }
-
-  a{
-      text-decoration: none;
-      color: var(--text-base);
-  }
-
-  a:hover{
-    color: var(--primary-color);
-  }
-  
-  .box{
-    background-color: var(--form-background);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 10px 10px 5px black;
-  }
-
-  main{
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-  }
-  
-  table{
-    margin-top: 30px;
-    text-align: center;
-  }
-  
-  .title{
-    font-family: Poppins, Sans-Serif;
-    color: var(--primary-color);
-  }
-  
-  td, th{
-   padding: 10px;
-  }
-  
-  .user{
-    color: var(--primary-color);
-    margin: 0 25px;
-  }
+.user{
+  color: var(--primary-color);
+  margin: 0 25px;
+}

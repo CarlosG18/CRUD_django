@@ -23,12 +23,48 @@ body{
     font-family: Roboto, Sans-Serif;
 }
 
-.box{
-  width: 800px;
+
+header{
+  margin-top: 10px;
   display: flex;
-  background-color: #d1ac0660;
-  margin: 30px;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(168, 168, 168, 0.486);
+}
+
+.links-header > ul{
+  display: flex;
+}
+
+.links-header > ul > li{
+  margin: 0 10px;
+  list-style: none;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: var(--text-base);
+}
+
+a:hover{
+color: var(--primary-color);
+}
+
+.box{
+  background-color: var(--form-background);
+  padding: 30px;
   border-radius: 15px;
+  box-shadow: 10px 10px 5px black;
+  display: flex;
+  margin: 20px 0;
 }
 
 .content{
@@ -145,8 +181,40 @@ form{
   color: green;
 }
 
+.title{
+  color: var(--primary-color);
+}
+
+.flex-column{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mx-10{
+  margin: 0 40px;
+}
+
+.space{
+display: flex;
+justify-content: center;
+}
+
+.my-20{
+  margin: 20px 0;
+}
+
+.mb-30{
+margin-bottom: 30px;
+}
+
+.text-center{
+  text-align: center;
+}
+
 @media (max-width: 800px){
   body{
+    font-size: 12px;
     align-items: center;
   }
   

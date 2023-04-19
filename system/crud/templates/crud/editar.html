@@ -1,76 +1,41 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'crud/css/list_user.css' %}">
-    <link rel="stylesheet" href="{% static 'crud/css/editar.css' %}">
-    <link rel="shortcut icon" href="{%  static 'crud/images/favicon.ico' %}" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <title>Listar users</title>
-</head>
-<body>
-  <header>
-    <div class="logo">
-      <a href="{% url 'crud:home' %}"><img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in"></a>
-    </div>
-    <div class="links-header">
-      <ul>
-        <p class="user">{{  request.user }}</p>
-        <li><a href="{% url 'crud:home' %}">home</a></li>
-        <li><a href="{% url 'crud:list_user' %}">listar users</a></li>
-        <li><a href="{% url 'crud:delete' %}">deletar</a></li>
-        <li><a href="{% url 'crud:editar' %}">editar</a></li>
-      </ul>
-    </div>
-  </header>
+{% extends "./base.html" %}
 
-  <main>
-    <div class="box flex-column">
-      <h1 class="title">Alterando dados</h1>
-      
-      <div class="data flex my-30">
-        <div class="data-atual mx-10 box border">
-          <h2 class="txt-center">Dados atuais</h2>
-          <div class="h-100 flex-column">
-            <p>Username: {{ request.user.username }}</p>
-            <p>Email: {{ request.user.email }}</p>
-          </div>
-        </div>
-        <div class="mx-10 box border">
-          <h2 class="txt-center">alterar dados</h2>
-          <div class="h-100 flex-column">
-            <form action="{% url 'crud:editar_user' request.user.id %}" id="form_edit" class="flex-column" method="POST">
-              {% csrf_token %}
-              <label for="username_in">Username</label>
-              <input required="true" autocomplete="false" type="text" id="username_in" name="new_name">
-              <label for="email_in">E-mail</label>
-              <input required="true" type="email" id="email_in" name="new_email">
-            </form>
-          </div>
+{% load static %}
+
+{% block styles %}<link rel="stylesheet" href="{% static 'crud/css/editar.css' %}">{% endblock %}
+ 
+{% block content %}
+  <div class="box flex-column">
+    <h1 class="title">Alterando dados</h1>
+    
+    <div class="data flex my-30">
+      <div class="data-atual mx-10 box border">
+        <h2 class="txt-center">Dados atuais</h2>
+        <div class="h-100 flex-column">
+          <p>Username: {{ request.user.username }}</p>
+          <p>Email: {{ request.user.email }}</p>
         </div>
       </div>
-      
-      <div class="confirm">
-        <p class="my-20"><b>para confirmar a edição dos dados coloque sua senha</b></p>
-        <div class="flex-column">
-          <input class="mb-20" form="form_edit" required="true" type="password" id="password" name="password">
-          <input form="form_edit" class="button" type="submit" value="EDITAR">
+      <div class="mx-10 box border">
+        <h2 class="txt-center">alterar dados</h2>
+        <div class="h-100 flex-column">
+          <form action="{% url 'crud:editar_user' request.user.id %}" id="form_edit" class="flex-column" method="POST">
+            {% csrf_token %}
+            <label for="username_in">Username</label>
+            <input required="true" autocomplete="false" type="text" id="username_in" name="new_name">
+            <label for="email_in">E-mail</label>
+            <input required="true" type="email" id="email_in" name="new_email">
+          </form>
         </div>
       </div>
-      
     </div>
-  </main>
-  
-  <footer>
-    <div class="links-social">
-      
+    
+    <div class="confirm">
+      <p class="my-20"><b>para confirmar a edição dos dados coloque sua senha</b></p>
+      <div class="flex-column">
+        <input class="mb-20" form="form_edit" required="true" type="password" id="password" name="password">
+        <input form="form_edit" class="button" type="submit" value="EDITAR">
+      </div>
     </div>
-  </footer>
-</body>
-</html>
+  </div>
+{% endblock %}

@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'crud/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'crud/css/style.css' %}">
+    {% block styles %}{% endblock%}
     <link rel="shortcut icon" href="{%  static 'crud/images/favicon.ico' %}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <title>Home</title>
+    <title>{% block title %}Home{% endblock %}</title>
 </head>
 <body>
-    <!-- {% block header %} -->
   <header>
     <div class="logo">
       <a href="{% url 'crud:home' %}"><img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in"></a>
@@ -29,10 +29,11 @@
       </ul>
     </div>
   </header>
-  <!-- {% endblock %} -->
 
+  <main>
+    {% block content%}{% endblock %}
+  </main>
 
-  <!-- {% block footer %} -->
   <footer class="box flex-column text-center">
     <div class="mb-30">
       <p>criado por <b>Carlos Gabriel</b></p>
@@ -43,6 +44,5 @@
       <a class="mx-10" href="#"><img src="{%  static 'crud/images/instagram.png' %}" alt="logo_instagram"></a>
     </div>
   </footer>
-  <!-- {% endblock %} -->
 </body>
 </html>

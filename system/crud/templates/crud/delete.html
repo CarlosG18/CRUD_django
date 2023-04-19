@@ -1,64 +1,31 @@
-<!DOCTYPE html>
+{% extends "./base.html" %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'crud/css/list_user.css' %}">
-    <link rel="shortcut icon" href="{%  static 'crud/images/favicon.ico' %}" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <title>Listar users</title>
-</head>
-<body>
-  <header>
-    <div class="logo">
-      <a href="{% url 'crud:home' %}"><img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in"></a>
-    </div>
-    <div class="links-header">
-      <ul>
-        <p class="user">{{  request.user }}</p>
-        <li><a href="{% url 'crud:home' %}">home</a></li>
-        <li><a href="{% url 'crud:list_user' %}">listar users</a></li>
-        <li><a href="{% url 'crud:delete' %}">deletar</a></li>
-        <li><a href="{% url 'crud:editar' %}">editar</a></li>
-      </ul>
-    </div>
-  </header>
 
-  <main class="box">
-    <div>
-      <h1 class="title"> Deletar usuários </h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-          <tr>
-            {% if user.username != request.user.username %}
-            <td>{{ user.username }}</td>
-            <td>{{ user.email }}</td>
-            <td><a href="{% url 'crud:delete_user' user.id %}">x</a></td>
-            {% endif %}
-          </tr>
-        {% endfor %}
-        </tbody>
-      </table>
-    </div>
-  </main>
-  
-  <footer>
-    <div class="links-social">
-      
-    </div>
-  </footer>
-</body>
-</html>
+{% block style %} <link rel="stylesheet" href="{% static 'crud/css/list_user.css' %}">{% endblock %}
+
+
+{% block content %}
+<div>
+  <h1 class="title"> Deletar usuários </h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+      <tr>
+        {% if user.username != request.user.username %}
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td><a href="{% url 'crud:delete_user' user.id %}">x</a></td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
