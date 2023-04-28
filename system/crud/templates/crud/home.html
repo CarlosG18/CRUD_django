@@ -1,8 +1,11 @@
 {% extends "./base.html" %}
+{% load static %}
+
+{% block style %} <link rel="stylesheet" href="{% static 'crud/css/home.css' %}">{% endblock %}
 
 {% block content %}
   <div class="box">
-    <h1 class="title"> Bem Vindo {{ request.user }} </h1>
+    <h1 class="title start"> Bem Vindo {{ request.user }} </h1>
     <p> aplicação CRUD </p>
   </div>
 

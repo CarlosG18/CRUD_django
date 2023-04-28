@@ -1,6 +1,6 @@
 *{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 :root{
@@ -12,38 +12,109 @@
     --primary-color: #ffc632; 
 }
 
-header{
-    margin-top: 10px;
-    display: flex;
-    width: 100vw;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(168, 168, 168, 0.486);
-    background-color: yellow;
-  }
-  
-  
-  .links-header > ul{
-    display: flex;
-  }
-  
-  .links-header > ul > li{
-    margin: 0 10px;
-    list-style: none;
-  }
-  
-  main{
+body{
+    background-color: var(--background);
+    color: var(--text-base);
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-family: Roboto, Sans-Serif;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  
-  a{
-    text-decoration: none;
-    color: var(--text-base);
-  }
-  
-  a:hover{
+
+.flex{
+display: flex;
+}
+
+.txt-center{
+text-align: center;
+}
+
+.border{
+border: 1px solid black;
+}
+
+.h-100{
+height: 100%;
+}
+
+.my-30{
+margin: 30px 0;
+}
+
+.my-20{
+margin: 20px 0;
+}
+
+.mb-20{
+margin-bottom: 20px;
+}
+
+.mx-10{
+margin: 0 20px;
+}
+
+.w100{
+    width: 100%;
+}
+
+.box{
+  background-color: var(--form-background);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px black;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  font-family: Poppins, Sans-Serif;
   color: var(--primary-color);
-  }
+  margin-bottom: 20px;
+}
+
+.button{
+  background-color: var(--primary-color);
+  color: black;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 5px;
+}
+
+input{
+  color: white;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 2px solid #cdcdcd60;
+  padding: 5px 0;
+  background-color: var(--form-background);
+}
+
+input:hover{
+  border: 2px solid var(--primary-color);
+}
+
+a{
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+}
