@@ -13,7 +13,6 @@ body{
 
 .box-index{
   background-color: var(--form-background);
-  padding: 30px;
   border-radius: 15px;
   box-shadow: 10px 10px 5px black;
   display: flex;
@@ -22,12 +21,12 @@ body{
 }
 
 .content{
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
-  margin-right: 10px;
+  padding: 30px;
 }
 
 form{
@@ -61,7 +60,7 @@ form{
 }
 
 .car-image{
-  max-width: 50%;
+  display: block;
 }
 
 .car-image > img{
@@ -77,18 +76,29 @@ form{
 }
 
 @media (max-width: 800px){
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
   body{
-    align-items: center;
+    height: auto;
   }
   
   .box-index{
     flex-direction: column-reverse;
-    max-width: 500px;
-    margin: 0;
-    background-color: var(--form-background);
+    align-items: center;
+  }
+
+  .content{
+   
   }
 
   .car-image{
-    display: none;
+    max-width: 350px;
+  }
+
+  .car-image > img{
+    border-radius: 15px 15px 0 0;
   }
 }
