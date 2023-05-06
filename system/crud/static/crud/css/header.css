@@ -22,7 +22,6 @@ header{
     border-bottom: 1px solid rgba(168, 168, 168, 0.486);
   }
   
-  
   .links-header > ul{
     display: flex;
   }
@@ -48,4 +47,8 @@ header{
 
   .logo{
     margin-left: 20px;
+  }
+  
+  @media (max-width: 800px){
+    
   }

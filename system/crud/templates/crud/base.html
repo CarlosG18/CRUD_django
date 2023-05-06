@@ -20,6 +20,11 @@
     <div class="logo">
       <a href="{% url 'crud:home' %}"><img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in"></a>
     </div>
+    <div class="menu_bar">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
     <div class="links-header">
       <ul>
         <p class="user">{{  request.user }}</p>
@@ -45,5 +50,6 @@
       <a class="mx-10" href="#"><img src="{%  static 'crud/images/instagram.png' %}" alt="logo_instagram"></a>
     </div>
   </footer>
+  <script href="{% static 'crud/js/nav_bar.js' %}"></script>
 </body>
 </html>
