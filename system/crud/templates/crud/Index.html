@@ -53,9 +53,10 @@
         </form>
       </div>
     </div>
-    <div class="car-image">
+      <picture class="car-image">
+        <source media="(max-width: 800px)" srcset="{% static 'crud/images/car-mobile.jpg' %}">
         <img src="{%  static 'crud/images/side-image.jpg' %}" alt="car_image">
-    </div>
+      </picture>
   </div>
   
 </body>

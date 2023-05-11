@@ -6,8 +6,3 @@ td, th{
   padding: 10px;
   margin: 15px;
 }
-
-.user{
-  color: var(--primary-color);
-  margin: 0 25px;
-}

@@ -22,12 +22,13 @@ body{
     font-family: Roboto, Sans-Serif;
 }
 
-.box{
+.box-register{
   background-color: var(--form-background);
   display: flex;
   flex-direction: column;
   max-width: 350px;
-  padding: 30px 50px;
+  padding: 50px;
+  box-shadow: 10px 10px 5px black;
   border-radius: 10px;
 }
 
@@ -105,3 +106,10 @@ form{
   border: 2px solid red;
   color: red;
 }
+@media (max-width: 800px){
+  .box-register{
+    max-width: 300px;
+    padding: 30px;
+  }
+}
+
