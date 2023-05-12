@@ -4,24 +4,23 @@
 
 {% block styles %} <link rel="stylesheet" href="{% static 'crud/css/list_user.css' %}"> {% endblock %}
    
-  {% block content %}
-    <div class="box center">
-      <h1 class="title"> Listando os usuários </h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-      {% for user in list %}
-          <tr>
-            <td>{{ user.username }}</td>
-            <td>{{ user.email }}</td>
-          </tr>
-      {% endfor %}
-        </tbody>
-      </table>
+{% block content %}
+
+<div class="box flex-column center">
+  <h1 class="title"> Listando usuários </h1>
+  <div class="flex flex-wrap center">
+    {% for user in list %}
+        {% if user.username != request.user.username %}
+        <div class="box flex center-column border space-between">
+          <div class="mr-10">
+            <p>{{ user.username }}</p>
+            <p>{{ user.email }}</p>
+          </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    <div>
     </div>
-    {% endblock %}
+  </div>
+</div>
+{% endblock %}

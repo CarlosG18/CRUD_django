@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'crud/css/header.css' %}">
     <link rel="stylesheet" href="{% static 'crud/css/base.css' %}">
-    {% block styles %}{% endblock%}
+    {% block styles %}{% endblock %}
     <link rel="shortcut icon" href="{%  static 'crud/images/favicon.ico' %}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,11 +19,6 @@
   <header>
     <div class="logo">
       <a href="{% url 'crud:home' %}"><img src="{%  static 'crud/images/logo.svg' %}" alt="logo_camp.in"></a>
-    </div>
-    <div class="menu_bar">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
     </div>
     <div class="links-header">
       <ul>
@@ -40,7 +35,7 @@
     {% block content%}{% endblock %}
   </main>
 
-  <footer class="box flex-column text-center w100">
+  <footer class="box mx-0 br-0 flex-column text-center">
     <div class="mb-30">
       <p>criado por <b>Carlos Gabriel</b></p>
     </div>

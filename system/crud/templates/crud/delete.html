@@ -1,31 +1,24 @@
 {% extends "./base.html" %}
 {% load static %}
-
-{% block style %} <link rel="stylesheet" href="{% static 'crud/css/list_user.css' %}">{% endblock %}
-
+<link rel="stylesheet" href="{% static 'crud/css/delete.css' %}">
 
 {% block content %}
-<div class="box center">
+<div class="box flex-column center">
   <h1 class="title"> Deletar usuários </h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Username</th>
-        <th>Email</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="flex flex-wrap center">
     {% for user in users %}
-      <tr>
         {% if user.username != request.user.username %}
-        <td>{{ user.username }}</td>
-        <td>{{ user.email }}</td>
-        <td><a href="{% url 'crud:delete_user' user.id %}">x</a></td>
+        <div class="box flex center-column border space-between">
+          <div class="mr-10">
+            <p>{{ user.username }}</p>
+            <p>{{ user.email }}</p>
+          </div>
+          <a href="{% url 'crud:delete_user' user.id %}"><img src="{% static 'crud/images/botao-x.png' %}" alt="button_x"></a>
+        </div>
         {% endif %}
-      </tr>
     {% endfor %}
-    </tbody>
-  </table>
+    <div>
+    </div>
+  </div>
 </div>
 {% endblock %}

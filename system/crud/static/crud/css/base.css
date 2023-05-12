@@ -15,10 +15,7 @@
 body{
     background-color: var(--background);
     color: var(--text-base);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100vw;
     font-size: 12px;
     font-family: Roboto, Sans-Serif;
 }
@@ -32,6 +29,10 @@ body{
 
 .flex{
 display: flex;
+}
+
+.row{
+  flex-direction: row;
 }
 
 .txt-center{
@@ -62,6 +63,10 @@ margin-bottom: 20px;
 margin: 0 20px;
 }
 
+.mr-10{
+  margin-right: 10px;
+}
+
 .w100{
     width: 100%;
 }
@@ -71,13 +76,23 @@ margin: 0 20px;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 10px 10px 5px black;
-  display: flex;
-  flex-direction: column;
   margin: 20px;
+}
+
+.mx-0{
+  margin: 20px 0;
+}
+
+.br-0{
+  border-radius: 0;
 }
 
 .center{
   justify-content: center;
+  align-items: center;
+}
+
+.center-column{
   align-items: center;
 }
 
@@ -93,6 +108,10 @@ margin: 0 20px;
   border: none;
   padding: 15px 15px;
   border-radius: 5px;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
 }
 
 input{
@@ -114,12 +133,24 @@ a{
   color: var(--primary-color);
 }
 
-main{
-  display: flex;
-  flex-direction: column;
-}
-
 .justificado{
   text-align: justify;
   line-height: 1.5em;
+}
+
+.padding-20{
+  padding: 20px;
+}
+
+.border{
+  border: 1px solid black;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+/*delete box*/
+.box-delete{
+  border: 2px solid red;
 }
