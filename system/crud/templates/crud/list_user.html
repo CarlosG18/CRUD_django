@@ -10,14 +10,12 @@
   <h1 class="title"> Listando usuários </h1>
   <div class="flex flex-wrap center">
     {% for user in list %}
-        {% if user.username != request.user.username %}
         <div class="box flex center-column border space-between">
           <div class="mr-10">
             <p>{{ user.username }}</p>
             <p>{{ user.email }}</p>
           </div>
         </div>
-        {% endif %}
     {% endfor %}
     <div>
     </div>

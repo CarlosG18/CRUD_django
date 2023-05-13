@@ -6,7 +6,8 @@
 <div class="box flex-column center">
   <h1 class="title"> Deletar usuários </h1>
   <div class="flex flex-wrap center">
-    {% for user in users %}
+    {% if users.count > 1 %}
+      {% for user in users %}
         {% if user.username != request.user.username %}
         <div class="box flex center-column border space-between">
           <div class="mr-10">
@@ -16,7 +17,10 @@
           <a href="{% url 'crud:delete_user' user.id %}"><img src="{% static 'crud/images/botao-x.png' %}" alt="button_x"></a>
         </div>
         {% endif %}
-    {% endfor %}
+      {% endfor %}
+    {% else %}
+      <p>Sistema sem usuários para serem deletados!</p>
+    {% endif %}
     <div>
     </div>
   </div>
