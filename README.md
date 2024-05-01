@@ -1,33 +1,20 @@
 # CRUD_django
-Desenvolvendo um crud simples com django-Python + Desafio: Login Form CSS (rocketseat) - modificado
 
-## aprendendo mais sobre templates do django
-***gerando html dinamicamente***
+> Criando um crud simples com django
 
-- **variavies**: para usar variaveis no arquivo html deve-se coloca-los dentro de `{{ variavel }}`
+**Tecnologias Ultilizadas**: 
+- ![django-logo](https://img.shields.io/badge/django-228B22?style=for-the-badge&logo=django&logoColor=white&labelColor=228B22)
 
-- **etiquetas (tags)**: as tags são ultilizadas com o uso de `{% tag %}`. exemplos de tags:
+## 🧩 Contextualização da aplicação
 
-```python
-{% csrf_token %}
-{% if user.is_authenticated %}
-{% for i in range(5) %}
-```
+Apresentamos um exemplo de um projeto pessoal para criar um CRUD simples (Create, Read, Update, Delete) utilizando o framework Django. Este projeto foi desenvolvido como parte do aprendizado e prática de Django e demonstra como criar uma aplicação web básica para gerenciar informações de uma entidade específica.
 
-- **filtros(filters)**: os filtros transformam os valores da variaveis
+## 🎯 Objetivo
 
-- herança de modelos:
-você pode criar um modelo base e exporta em outros arquivos
+O projeto do CRUD simples abrange as funcionalidades essenciais de um sistema de gerenciamento de dados, permitindo a criação, leitura, atualização e exclusão de registros. Com esse CRUD foi possivel estruturar um projeto Django, definir modelos de dados, criar views para manipular esses dados e usar templates para exibir informações de forma dinâmica.
 
-- para exportar uma base html basta usar a seguinte expressão no topo do arquivo html:
+## 🌐 Deploy
 
-```python
-{% extends "./base.html" %}
-```
+Observe este CRUD de aplicação em funcionamento.
 
-- você pode criar blocos para otimizar sua pagina html:
-
-```python
-{% block <nome do bloco> %}{% endblock %}
-```
-
+- o **CRUD_django** pode ser acessado [🔗 por aqui]()
