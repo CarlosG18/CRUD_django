@@ -17,7 +17,7 @@ SECRET_KEY = get_random_secret_key()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.alwaysdata.net']
+ALLOWED_HOSTS = ['.pythonanywhere.com']
 #ALLOWED_HOSTS = []
 
 # Application definition
