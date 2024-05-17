@@ -17,4 +17,4 @@ O projeto do CRUD simples abrange as funcionalidades essenciais de um sistema de
 
 Observe este CRUD de aplicação em funcionamento.
 
-- o **CRUD_django** pode ser acessado [🔗 por aqui]()
+- o **CRUD_django** pode ser acessado [🔗 por aqui](https://cruddjango9.pythonanywhere.com/crud/)
